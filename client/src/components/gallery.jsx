@@ -1,8 +1,8 @@
 import React from "react";
-import Polaroid from "./polariod";
 import colors from "./colours";
+import Polaroid from "./polariod";
 
-export default function Gallery({photos_array}) {
+export default function Gallery({ photos_array }) {
   // let photos_array = [
   //   [
   //     "happy",
@@ -143,18 +143,16 @@ export default function Gallery({photos_array}) {
   );
 
   const toggle_polariod = (e) => {
-    const elem = e.target
-    const parent = elem.parentElement
+    const elem = e.target;
+    const parent = elem.parentElement;
 
     // parent.classList.toggle('active')
-
-  }
+  };
 
   // Calculate positions along the timeline based on the timestamps
-  const timelineWidth = 1152; // Set dynamically for 72em width
+  const timelineWidth = 2000; // Set dynamically for 72em width
   const totalTime = photos.length; // You could calculate total time if timestamps vary
   const spacing = timelineWidth / totalTime;
-  
 
   return (
     <div style={styles.galleryContainer}>
@@ -176,14 +174,9 @@ export default function Gallery({photos_array}) {
                 ...styles.polaroidWrapper,
                 transform: `translate(${position}px, ${yOffset}px) rotate(${randomAngle}deg)`,
               }}
-              className = {'polaroid-container'}
+              className={"polaroid-container"}
             >
-              <div
-                className = 'polaroid-expand'
-                onClick={toggle_polariod}
-              >
-
-              </div>
+              <div className="polaroid-expand" onClick={toggle_polariod}></div>
               <Polaroid photo={photo} />
             </div>
           );
