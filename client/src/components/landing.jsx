@@ -2,6 +2,7 @@ import Timeline from "./timeline";
 import React, { useState, useEffect } from "react";
 import { Plus } from "lucide-react";
 import Background from "./background";
+import Gallery from "./gallery";
 
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, listAll, getDownloadURL } from 'firebase/storage';
@@ -22,16 +23,17 @@ export default function Landing({ onWrappedSuccess }) {
 
   const app = initializeApp(firebaseConfig);
 
+  const [photos, setPhotos] = useState([])
   const [emotions, setEmotions] = useState([
     ["happy", 14],
     ["sad", 12],
     ["angry", 9],
-    ["fear", 12],
-    ["happy", 20],
-    ["sad", 23],
-    ["angry", 22],
-    ["fear", 6],
-    ["happy", 10],
+    // ["fear", 12],
+    // ["happy", 20],
+    // ["sad", 23],
+    // ["angry", 22],
+    // ["fear", 6],
+    // ["happy", 10],
   ])
   // let emotions = [
   //   ["happy", 14],
@@ -106,6 +108,7 @@ export default function Landing({ onWrappedSuccess }) {
         }
 
         console.log(new_arr)
+        setPhotos(new_arr)
 
         const res = countEmotions(new_arr);
         // console.log(res);
@@ -122,6 +125,9 @@ export default function Landing({ onWrappedSuccess }) {
   return (
     <div className="min-h-screen p-6 relative bg-gradient-to-br from-[#FFE4E1] via-[#E6F3EC] to-[#E0FFFF]">
       <div className="max-w-4xl mx-auto space-y-12">
+        <div className="gallery-container">
+          <Gallery photos_array={photos}/>
+        </div>
         <div className="landing">your feelings today,</div>
         <Timeline emotions={emotions} />
         <div className="second">
@@ -146,7 +152,7 @@ export default function Landing({ onWrappedSuccess }) {
         </div>
       </div>
       <div className="bottom">
-        <button className="unwrapped">
+        <button className="unwrapped" onClick={onWrappedSuccess}>
           <div>day unwrapped</div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
