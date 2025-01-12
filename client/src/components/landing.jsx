@@ -40,7 +40,7 @@ export default function Landing({ onWrappedSuccess }) {
                 stroke-linejoin="round"
               />
             </svg>
-            <div className="romp">add additional photos</div>
+            <div className="romp">add additional photos!</div>
           </button>
         </div>
       </div>
