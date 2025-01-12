@@ -8,6 +8,12 @@
   line-height: 25px; /* 96.154% */
 }
 
+.gallery-container {
+  position: fixed;
+  z-index: -1; /* Ensure the gallery stays above the background */
+  margin-top: 40px; /* Spacing between gallery and timeline */
+}
+
 .additional-photos {
   cursor: pointer;
   display: flex;
@@ -51,13 +57,14 @@
   font-weight: 400;
   width: 400;
   border: none;
-  background: none;
+  background: white;
   border: 0.015em solid#2C85CE;
   padding: 10% 13%;
   border-radius: 20px;
   color: #2c85ce;
   text-align: center;
   margin: 0;
+  z-index: 200;
   box-shadow: 0px 0px 10px 2px #b0dbfe;
 }
 

@@ -1,7 +1,8 @@
-import Timeline from "./timeline";
 import React, { useState } from "react";
 import { Plus } from "lucide-react";
 import Background from "./background";
+import Gallery from "./gallery";
+import Timeline from "./timeline";
 
 import "./landing.css";
 
@@ -21,6 +22,9 @@ export default function Landing({ onWrappedSuccess }) {
   return (
     <div className="min-h-screen p-6 relative bg-gradient-to-br from-[#FFE4E1] via-[#E6F3EC] to-[#E0FFFF]">
       <div className="max-w-4xl mx-auto space-y-12">
+        <div className="gallery-container">
+          <Gallery />
+        </div>
         <div className="landing">your feelings today,</div>
         <Timeline emotions={emotions} />
         <div className="second">
@@ -45,7 +49,7 @@ export default function Landing({ onWrappedSuccess }) {
         </div>
       </div>
       <div className="bottom">
-        <button className="unwrapped">
+        <button className="unwrapped" onClick={onWrappedSuccess}>
           <div>day unwrapped</div>
           <svg
             xmlns="http://www.w3.org/2000/svg"

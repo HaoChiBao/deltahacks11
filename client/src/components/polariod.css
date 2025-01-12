@@ -1,0 +1,66 @@
+/* Container for the Polaroid */
+.polaroid {
+  width: 130px; /* Outer polaroid size */
+  height: 160px; /* Outer polaroid size */
+  cursor: pointer;
+  padding: 10px; /* Padding inside the polaroid */
+  box-sizing: border-box; /* Ensures padding is included in the total size */
+  border-radius: 10px; /* Optional: round the outer edges for a smoother look */
+  box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.17); /* Add shadow for outer edge */
+  background-color: white; /* Polaroid background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d; /* Preserve the 3D context for flip */
+  transition: transform 0.6s ease; /* Flip animation */
+}
+
+/* Flip effect (flip the entire polaroid on click) */
+.polaroid.flipped {
+  transform: rotateY(180deg); /* Flip the whole polaroid */
+}
+
+/* Container holding the front and back images */
+.polaroid-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align image to the top */
+  transform-style: preserve-3d; /* Keep the images in 3D space for flipping */
+  position: relative;
+}
+
+/* Style for the front side */
+.polaroid-front,
+.polaroid-back {
+  position: absolute;
+  width: 100px; /* Square size for the image */
+  height: 100px; /* Square size for the image */
+  backface-visibility: hidden; /* Hide the back face during flip */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px; /* Rounded corners for inner elements */
+  box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.17); /* Inner shadow */
+}
+
+/* Position the front image */
+.polaroid-front {
+  background: white;
+}
+
+/* Position the back image and rotate it */
+.polaroid-back {
+  background: white;
+  transform: rotateY(180deg); /* Hide the back by default */
+}
+
+/* Style for the images to fill the square */
+.polaroid-image {
+  width: 100%; /* Square size for the image */
+  height: 100%; /* Square size for the image */
+  object-fit: cover; /* Ensure the image covers the entire space */
+  border-radius: 8px; /* Inner rounded corners */
+}
