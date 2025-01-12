@@ -1,0 +1,47 @@
+.circles {
+  position: absolute;
+  display: flex;
+  justify-content: center; /* Center the circles horizontally */
+  align-items: center;
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  transform: translateY(-50%); /* Vertically center the circles */
+  z-index: -2;
+  top: 50%;
+  filter: blur(80px);
+  overflow: hidden;
+}
+
+.circle1,
+.circle2,
+.circle3 {
+  position: absolute; /* Position the circles absolutely */
+  flex-shrink: 0; /* Prevent circles from shrinking */
+  opacity: 0.5; /* Set opacity to 50% */
+  animation: slidein 7s infinite alternate;
+  border-radius: 50%;
+  transform: rotate(70.769deg);
+  width: 593px;
+  height: 100vh;
+}
+
+.circle1 {
+  left: 10%; /* Position the first circle on the left third */
+}
+
+.circle2 {
+  left: 33%; /* Position the second circle in the middle third */
+}
+
+.circle3 {
+  right: 33%; /* Position the third circle on the right third */
+}
+
+@keyframes slidein {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 30%;
+  }
+}
