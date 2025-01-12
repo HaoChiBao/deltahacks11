@@ -5,6 +5,12 @@ const colors = {
     angry: "#FFD4A7",
     fear: "#D2C5FD",
   },
+  titles: {
+    happy: "#D0BB00",
+    sad: "#0C64AC",
+    angry: "#954B4B",
+    fear: "#563BB0",
+  },
   gradients: {
     happy: "linear-gradient(27deg, #FFF7B2, #E6D752)",
     sad: "linear-gradient(27deg, #B0DBFE, #3B8ED2)",
