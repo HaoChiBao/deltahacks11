@@ -52,6 +52,11 @@ export default function Landing({
   //   ["happy", 10],
   // ];
 
+  const finish_loading = (e) => {
+    const elem = e.target
+    elem.classList.add('active')
+  }
+
   useEffect(() => {
     const storage = getStorage(app); // Get Firebase storage instance
     const storageRef = ref(storage, "images/"); // Reference to storage root
@@ -137,6 +142,15 @@ export default function Landing({
   }, []);
 
   return (
+    <>
+    <section className = 'loading-screen' onClick={finish_loading}>
+      <div className="screen"></div>
+      <h1>Glimpse</h1>
+
+      {/* <img src="https://images.squarespace-cdn.com/content/v1/64b6dd6337355858757ca89c/9c028787-9151-4ef0-b94d-9efa63ba812f/eye+2.gif" alt="" /> */}
+      <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA3MTRfMTQx/MDAxNTk0NzI2MDYzMjQw.FCjLc5LoSPs3ryzmW3Q5Jh_O4wm5w9J-YfukWMdsQWIg.k5jiFfqxXP5vz4ho7Q2hPWaeIJIc_u9Syexlk13n56Mg.GIF.kimyoungna1122/IMG_7596.GIF?type=w800" alt="" />
+
+    </section>
     <div className="min-h-screen p-6 relative bg-gradient-to-br from-[#FFE4E1] via-[#E6F3EC] to-[#E0FFFF]">
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="gallery-container">
@@ -188,5 +202,6 @@ export default function Landing({
 
       <Background emotions={emotions} />
     </div>
+    </>
   );
 }

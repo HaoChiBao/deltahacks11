@@ -6,6 +6,7 @@ export default function Polaroid({ photo }) {
 
   const handleClick = () => {
     setFlipped((prev) => !prev); // Toggle the flip state
+    // console.log(photo)
   };
 
   return (
@@ -28,6 +29,12 @@ export default function Polaroid({ photo }) {
             className="polaroid-image"
           />
         </div>
+          
+        <div className="polaroid-caption">
+          <p>{photo.alt}</p>
+        </div>
+
+
         <div className="polaroid-back">
           <img
             src={photo.screen_src}

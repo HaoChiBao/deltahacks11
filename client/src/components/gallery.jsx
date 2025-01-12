@@ -178,12 +178,12 @@ export default function Gallery({photos_array}) {
               }}
               className = {'polaroid-container'}
             >
-              <div
+              {/* <div
                 className = 'polaroid-expand'
                 onClick={toggle_polariod}
               >
 
-              </div>
+              </div> */}
               <Polaroid photo={photo} />
             </div>
           );

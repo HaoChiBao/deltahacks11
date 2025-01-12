@@ -21,7 +21,7 @@
 }
 
 .polaroid:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
   z-index: 103;
 }
 
@@ -31,8 +31,21 @@
   transform: rotateY(180deg); /* Flip the whole polaroid */
 }
 
+.polaroid.flipped p{
+  transform: rotateY(180deg); /* Flip the whole polaroid */
+}
+
+.polaroid:hover p{
+  opacity: 0.8;
+}
+.polaroid p{
+  /* font-family: 'Inter' */
+  opacity: 0.5;
+  transition: 0.5s ease;
+}
+
 .polaroid.flipped:hover {
-  transform: rotateY(180deg)scale(1.1);
+  transform: rotateY(180deg)scale(1.5);
   z-index: 103;
 }
 
@@ -46,6 +59,13 @@
   align-items: flex-start; /* Align image to the top */
   transform-style: preserve-3d; /* Keep the images in 3D space for flipping */
   position: relative;
+}
+
+.polaroid-inner .polaroid-caption{
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  font-size: 0.8rem;
 }
 
 /* Style for the front side */
@@ -74,6 +94,8 @@
   transform: rotateY(180deg); /* Hide the back by default */
 }
 
+
+
 /* Style for the images to fill the square */
 .polaroid-image {
   width: 100%; /* Square size for the image */
@@ -82,7 +104,7 @@
   border-radius: 8px; /* Inner rounded corners */
 }
 
-.polaroid-container:hover .polaroid-expand {
+/* .polaroid-container:hover .polaroid-expand {
   transition: 0.5s ease;
   opacity: 0.5;
   pointer-events:all;
@@ -105,17 +127,4 @@
   
   z-index: 500;
   transition: 0.5s ease;
-}
-
-.polaroid-container.active{
-  position: fixed;
-  left: 50%;
-  top: 50%;
-}
-
-.polaroid-container.active .polaroid{
-  width: 487px; /* Outer polaroid size */
-  height: 600px; /* Outer polaroid size */
-
-
-}
+} */
