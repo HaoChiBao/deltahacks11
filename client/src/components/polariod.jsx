@@ -16,6 +16,12 @@ export default function Polaroid({ photo }) {
     >
       <div className="polaroid-inner">
         <div className="polaroid-front">
+          <div
+            className="polaroid-gradient-overlay"
+            style={{
+              background: photo.backgroundGradient || "rgba(0, 0, 0, 0)",
+            }}
+          ></div>
           <img
             src={photo.face_src}
             alt={photo.alt || "Polaroid"}
