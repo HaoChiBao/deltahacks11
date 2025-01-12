@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center; /* Center the circles horizontally */
   align-items: center;
-  width: 100vw; /* Full width of the viewport */
+  width: 90vw; /* Full width of the viewport */
   height: 100vh; /* Full height of the viewport */
   transform: translateY(-50%); /* Vertically center the circles */
   z-index: -2;

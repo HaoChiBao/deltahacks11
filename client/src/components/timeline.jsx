@@ -6,6 +6,9 @@ export default function Timeline({ emotions }) {
   // theses are the emotions, total it for percentage
 
   // loop through the emotions second thing to total time and define the colours of gradient
+
+  // need to place photo relative to where the timestamp is... but later issue for nwo we will hard card position to see it show up
+
   const totalTime = emotions.reduce((sum, [, time]) => sum + time, 0);
 
   const gradientStops = [];
